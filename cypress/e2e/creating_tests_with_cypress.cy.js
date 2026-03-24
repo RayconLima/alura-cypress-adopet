@@ -1,0 +1,58 @@
+const site_url = 'https://adopet-tau.vercel.app/';
+
+describe('ADOPET homepage verification', () => {
+  it('should load home page', () => {
+    cy.visit(site_url);
+    cy.contains('a', 'Cadastrar').click();
+    cy.get("input[name='name']").type('Fulano de tal');
+    cy.get('input[name="email"]').type('fulano_de_tal@email.com');
+    cy.get('input[name="password"]').type('Senha123');
+    cy.get('input[name="confirm_password"]').type('Senha123');
+    cy.get('button').click();
+  });
+});
+
+describe('Exercise', () => {
+  it("should load home page and 'Ver pets disponíveis para adoção'", () => {
+    cy.visit(site_url);
+    cy.contains('a', 'Ver pets disponíveis para adoção').click();
+  });
+
+  it('should load home page and test the header buttons', () => {
+    cy.visit(site_url);
+    cy.wait(1000);
+    cy.get('.header__message').click();
+    cy.wait(2000);
+    cy.get('.header__home').click();
+  });
+
+  it('should load login page', () => {
+    cy.visit(site_url);
+    cy.wait(1000);
+    cy.visit(site_url + '/login');
+  });
+
+  it("should load home page", () => {
+    cy.visit(site_url);
+  });
+
+  it("should load home page and click in button 'Falar com o responsável'", () => {
+    cy.visit(site_url);
+    cy.wait(1000);
+    cy.contains('a', 'Ver pets disponíveis para adoção').click();
+    cy.wait(2000);
+    cy.get("a.card__contact").first().click();
+
+    cy.contains('a', 'Faça seu cadastro').click();
+    cy.get("input[name='name']").type('Fulano de tal');
+    cy.get('input[name="email"]').type('fulano_de_tal@email.com');
+    cy.get('input[name="password"]').type('Senha123');
+    cy.get('input[name="confirm_password"]').type('Senha123');
+    cy.get('button').click();
+    cy.wait(2000);
+    cy.get('input[name="email"]').type('fulano_de_tal@email.com');
+    cy.get('input[name="password"]').type('Senha123');
+    cy.contains('Entrar').click();
+    cy.wait(2000);
+  });
+});
