@@ -17,8 +17,19 @@ Antes de começar, é importante ter:
 *   Noções sobre **desenvolvimento web**, como ***Status Code***, **métodos HTTP** e **API**.
 *   Conhecimentos básicos em **HTML**, **CSS**, **JavaScript** e **DOM**.
 
-## Como executar os testes (Em breve)
-As instruções detalhadas para executar os testes serão adicionadas conforme avançamos no curso.
+## Como executar os testes
+Para executar os testes end-to-end com Cypress, siga os passos abaixo:
+
+1. **Instale as dependências**: Execute `make install` para instalar todas as dependências do projeto usando npm.
+
+2. **Abra a interface gráfica do Cypress**: Execute `make cypress-open` para abrir a interface gráfica e executar os testes interativamente.
+
+3. **Execute os testes no modo headless**: Execute `make cypress-run` para rodar os testes em modo headless (sem interface gráfica).
+
+4. **Execute os testes com relatório**: Execute `make cypress-run-with-reporter` para gerar relatórios detalhados dos testes usando Mochawesome.
+
+## Automação de testes
+Este projeto possui testes end-to-end com Cypress, com execuções registradas no Cypress Cloud para acompanhamento de histórico e resultados.
 
 ## Contribuições
 Contribuições são sempre bem-vindas! Se você tiver alguma sugestão de melhoria ou correção, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
