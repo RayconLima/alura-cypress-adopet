@@ -1,9 +1,12 @@
 const site_url = 'https://adopet-tau.vercel.app/';
 
 describe('ADOPET homepage verification', () => {
-  it('should load home page', () => {
+  beforeEach(() => {
     cy.visit(site_url);
     cy.contains('a', 'Cadastrar').click();
+  });
+
+  it('should load home page', () => {
     cy.get("input[name='name']").type('Fulano de tal');
     cy.get('input[name="email"]').type('fulano_de_tal@email.com');
     cy.get('input[name="password"]').type('Senha123');
