@@ -5,9 +5,7 @@ describe('login page', () => {
     });
     
     it('should must fill in the form fields correctly to login a user.', () => {
-        cy.get('[name="email"]').type('ana@email.com');
-        cy.get('[name="password"]').type('Senha123');
-        cy.get('button').click();
+        cy.login('ana@email.com', 'Senha123');
     });
 
     it('should display an error message for an invalid email address', () => {
