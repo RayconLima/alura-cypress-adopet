@@ -1,7 +1,10 @@
 describe('Registration page', () => {
-    it('should must fill in the form fields correctly to register a new user.', () => {
+    beforeEach(() => {
         cy.visit('https://adopet-tau.vercel.app/');
         cy.get('[href="/cadastro"]').click();
+    });
+    
+    it('should must fill in the form fields correctly to register a new user.', () => {
         cy.get('[name="name"]').type('Ana de Jesus');
         cy.get('[name="email"]').type('ana@email.com');
         cy.get('[name="password"]').type('Senha123');
