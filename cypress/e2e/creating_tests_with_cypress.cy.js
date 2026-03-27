@@ -47,15 +47,9 @@ describe('Exercise', () => {
     cy.get("a.card__contact").first().click();
 
     cy.contains('a', 'Faça seu cadastro').click();
-    cy.get("input[name='name']").type('Fulano de tal');
-    cy.get('input[name="email"]').type('fulano_de_tal@email.com');
-    cy.get('input[name="password"]').type('Senha123');
-    cy.get('input[name="confirm_password"]').type('Senha123');
-    cy.get('button').click();
+    cy.register('Fulano de tal', 'fulano_de_tal@email.com', 'Senha123', 'Senha123');
     cy.wait(2000);
-    cy.get('input[name="email"]').type('fulano_de_tal@email.com');
-    cy.get('input[name="password"]').type('Senha123');
-    cy.contains('Entrar').click();
+    cy.sigIn('fulano_de_tal@email.com', 'Senha123');
     cy.wait(2000);
   });
 });

@@ -1,4 +1,4 @@
-Cypress.Commands.add('login', (email, password) => { 
+Cypress.Commands.add('sigIn', (email, password) => { 
     cy.get('[name="email"]').type(email);
     cy.get('[name="password"]').type(password);
     cy.get('button').click();
