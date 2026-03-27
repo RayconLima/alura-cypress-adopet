@@ -5,7 +5,7 @@ describe('login page', () => {
     });
     
     it('should must fill in the form fields correctly to login a user.', () => {
-        cy.login('ana@email.com', 'Senha123');
+        cy.sigIn('ana@email.com', 'Senha123');
     });
 
     it('should display an error message for an invalid email address', () => {
@@ -29,8 +29,6 @@ describe('alternative login flow', () => {
     });
 
     it('should login through an alternative flow by accessing the main page, clicking the header message icon, and entering valid credentials', () => {
-        cy.get('[name="email"]').type('ana@email.com');
-        cy.get('[name="password"]').type('Senha123');
-        cy.get('button').click();
+        cy.sigIn('ana@email.com', 'Senha123');
     });
 });

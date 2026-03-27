@@ -15,3 +15,6 @@ cypress-run-headless:
 
 cypress-run-with-reporter:
 	. "$(NVM_DIR)/nvm.sh" && nvm use && npx cypress run --reporter mochawesome
+
+cypress-recorder:
+	. "$(NVM_DIR)/nvm.sh" && nvm use && npx cypress run --record
