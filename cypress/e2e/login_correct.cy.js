@@ -1,7 +1,10 @@
+import {API_BASE_URL, BASE_URL} from '../support/config';
+
 describe('login page', () => {
     beforeEach(() => {
-        cy.visit('https://adopet-tau.vercel.app/');
+        cy.visit(BASE_URL);
         cy.get('[href="/login"]').click();
+        cy.intercept('POST', `${API_BASE_URL}/adotante/login`, { statusCode:400 }).as('stubPost');
     });
     
     it('should must fill in the form fields correctly to login a user.', () => {
@@ -23,7 +26,7 @@ describe('login page', () => {
 
 describe('alternative login flow', () => {
     beforeEach(() => {
-        cy.visit('https://adopet-tau.vercel.app/');
+        cy.visit(BASE_URL);
         cy.wait(5000);
         cy.get('.header__message').click();
     });

@@ -17,6 +17,9 @@ Antes de começar, é importante ter:
 *   Noções sobre **desenvolvimento web**, como ***Status Code***, **métodos HTTP** e **API**.
 *   Conhecimentos básicos em **HTML**, **CSS**, **JavaScript** e **DOM**.
 
+## API
+https://adopet-api-i8qu.onrender.com/adotante/
+
 ## Como executar os testes
 Para executar os testes end-to-end com Cypress, siga os passos abaixo:
 

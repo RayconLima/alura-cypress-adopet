@@ -10,7 +10,7 @@ cypress-open:
 cypress-run:
 	. "$(NVM_DIR)/nvm.sh" && nvm use && npx cypress run
 
-cypress-run-headless:
+cypress-headless:
 	. "$(NVM_DIR)/nvm.sh" && nvm use && npx cypress run --headless
 
 cypress-run-with-reporter:
