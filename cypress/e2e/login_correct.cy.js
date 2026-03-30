@@ -1,11 +1,14 @@
+import {API_BASE_URL, BASE_URL} from '../support/config';
+
 describe('login page', () => {
     beforeEach(() => {
-        cy.visit('https://adopet-tau.vercel.app/');
+        cy.visit(BASE_URL);
         cy.get('[href="/login"]').click();
+        cy.intercept('POST', `${API_BASE_URL}/adotante/login`, { statusCode:400 }).as('stubPost');
     });
     
     it('should must fill in the form fields correctly to login a user.', () => {
-        cy.login('ana@email.com', 'Senha123');
+        cy.sigIn('ana@email.com', 'Senha123');
     });
 
     it('should display an error message for an invalid email address', () => {
@@ -23,14 +26,12 @@ describe('login page', () => {
 
 describe('alternative login flow', () => {
     beforeEach(() => {
-        cy.visit('https://adopet-tau.vercel.app/');
+        cy.visit(BASE_URL);
         cy.wait(5000);
         cy.get('.header__message').click();
     });
 
     it('should login through an alternative flow by accessing the main page, clicking the header message icon, and entering valid credentials', () => {
-        cy.get('[name="email"]').type('ana@email.com');
-        cy.get('[name="password"]').type('Senha123');
-        cy.get('button').click();
+        cy.sigIn('ana@email.com', 'Senha123');
     });
 });
