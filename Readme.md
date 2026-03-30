@@ -1,6 +1,5 @@
 [![QA Testing](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/9dx34q/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/9dx34q/runs)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/Naereen/StrapDown.js/commit/)
 
 # Cypress: Automatizando testes E2E
 Este é um repositório com a implementação prática do curso "Cypress: automatizando testes E2E" da Alura, ministrado pela instrutora Camila Pessôa.
